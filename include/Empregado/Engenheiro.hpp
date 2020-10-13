@@ -1,4 +1,7 @@
+#ifndef ENGENHEIRO_H
+#define ENGENHEIRO_H
 #include "Empregado.hpp"
+#include <string>
 
 class Engenheiro : public Empregado {
 
@@ -6,3 +9,5 @@ class Engenheiro : public Empregado {
     std::string nome;  
 	int projetos;
 };
+
+#endif
