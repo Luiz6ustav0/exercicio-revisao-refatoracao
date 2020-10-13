@@ -12,8 +12,14 @@ TEST_FILE = BasicTests.cpp
 
 all: run
 
-${BUILD_DIR}/${TARGET}: ${BUILD_DIR}/Vendedor.o ${BUILD_DIR}/main.o # ${BUILD_DIR}/Engenheiro.o
+${BUILD_DIR}/${TARGET}: ${BUILD_DIR}/Vendedor.o ${BUILD_DIR}/main.o ${BUILD_DIR}/Engenheiro.o ${BUILD_DIR}/Empregado.o
 	@${CC} ${CFLAGS} -o ${BUILD_DIR}/${TARGET} ${BUILD_DIR}/*.o
+
+${BUILD_DIR}/Engenheiro.o: ${INCLUDE_DIR}/Empregado/Empregado.hpp ${SRC_DIR}/Empregado/Engenheiro.cpp
+	@${CC} ${CFLAGS} -I ${INCLUDE_DIR}/Empregado/ -c ${SRC_DIR}/Empregado/Engenheiro.cpp -o ${BUILD_DIR}/Engenheiro.o
+
+${BUILD_DIR}/Empregado.o: ${INCLUDE_DIR}/Empregado/Empregado.hpp
+	@${CC} ${CFLAGS} -I ${INCLUDE_DIR}/Empregado/ -c ${SRC_DIR}/Empregado/Empregado.cpp -o ${BUILD_DIR}/Empregado.o
 
 ${BUILD_DIR}/Vendedor.o: ${INCLUDE_DIR}/Empregado/Empregado.hpp ${SRC_DIR}/Empregado/Vendedor.cpp
 	@${CC} ${CFLAGS} -I ${INCLUDE_DIR}/Empregado/ -c ${SRC_DIR}/Empregado/Vendedor.cpp -o ${BUILD_DIR}/Vendedor.o

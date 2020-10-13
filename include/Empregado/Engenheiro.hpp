@@ -4,10 +4,11 @@
 #include <string>
 
 class Engenheiro : public Empregado {
-
-  public:
-    std::string nome;  
-	int projetos;
+    public:
+        int getProjetos();
+        void setProjetos(int num);
+    private:
+        int projetos;
 };
 
 #endif
