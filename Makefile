@@ -20,7 +20,7 @@ ${BUILD_DIR}/Vendedor.o: ${INCLUDE_DIR}/Empregado/Empregado.hpp ${SRC_DIR}/Empre
 ${BUILD_DIR}/main.o: ${INCLUDE_DIR}/Empregado/Empregado.hpp ${SRC_DIR}/main.cpp
 	${CC} ${CFLAGS} -I ${INCLUDE_DIR}/Empregado/ -c ${SRC_DIR}/main.cpp -o ${BUILD_DIR}/main.o
 
-run: ${BUILD_DIR}/main.out
+run: ${BUILD_DIR}/${TARGET}
 	@$^
 
 clean:
