@@ -5,6 +5,7 @@
 
 class Engenheiro : public Empregado {
     public:
+        Engenheiro(std::string name, float salary, int projs);
         int getProjetos();
         void setProjetos(int num);
     private:

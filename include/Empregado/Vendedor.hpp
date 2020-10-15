@@ -4,9 +4,9 @@
 #include <string>
 
 class Vendedor : public Empregado {
-
-  public:
-	double quotaTotalAnual();	
+    public:
+        Vendedor(std::string name, float salary, int quota);
+    	double quotaTotalAnual();	
 };
 
 #endif

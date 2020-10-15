@@ -22,6 +22,9 @@ class Empregado {
         std::string getName();
         double getSalario();
         double getQuotaMensal();
+        void setNome(std::string nome);
+        void setSalarioHora(float salario);
+        void setQuotaMensalVendas(int vendas);
     private:
         double salarioHora;  
         double quotaMensalVendas;  
