@@ -30,14 +30,13 @@ ${BUILD_DIR}/main.o: ${INCLUDE_DIR}/Empregado/Empregado.hpp ${SRC_DIR}/main.cpp
 run: ${BUILD_DIR}/${TARGET}
 	@$^
 
-${TEST_DIR}/test.out : ${BUILD_DIR}/Vendedor.o
+${TEST_DIR}/test.out : ${BUILD_DIR}/Vendedor.o ${BUILD_DIR}/Engenheiro.o ${BUILD_DIR}/Empregado.o
 	@${CC} ${CFLAGS} -I ${INCLUDE_DIR}/Empregado/ -c ${TEST_DIR}/${TEST_FILE} -o ${TEST_DIR}/BasicTests.o
 	@${CC} ${CFLAGS} ${BUILD_DIR}/*.o ${TEST_DIR}/*.o -o ${TEST_DIR}/test.out
 
 test: ${TEST_DIR}/test.out
 	@$^ 
-	@echo "Removing files built for testing now"
-	@make clean
+	@echo "If you want to remove the files built for testing, you just need to 'make clean'"
 
 clean:
 	@rm -f ${BUILD_DIR}/* ${TEST_DIR}/*.out ${TEST_DIR}/*.o
