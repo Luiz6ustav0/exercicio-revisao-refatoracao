@@ -12,3 +12,6 @@ Vendedor::Vendedor(std::string name, float salary, int quota) {
 double Vendedor::quotaTotalAnual() {
 	    return this->getQuotaMensal() * MESES_DE_TRABALHO;
 }
+
+double Vendedor::getQuotaMensal() { return this->quotaMensalVendas; }
+void Vendedor::setQuotaMensalVendas(int vendas) { this->quotaMensalVendas = vendas; }

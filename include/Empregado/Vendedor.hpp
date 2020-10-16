@@ -6,7 +6,12 @@
 class Vendedor : public Empregado {
     public:
         Vendedor(std::string name, float salary, int quota);
-    	double quotaTotalAnual();	
+    	double quotaTotalAnual();
+        double getQuotaMensal();
+        void setQuotaMensalVendas(int vendas);	
+    
+    private:
+        double quotaMensalVendas;  
 };
 
 #endif
